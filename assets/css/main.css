@@ -7,6 +7,25 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.description {
+	margin-top: -.5rem;
+	margin-bottom: 1rem;
+	font-size: 0.8rem;
+}
+
+.descriptionContainer {
+	flex-grow: 1;
+}
+
+.time {
+	flex-shrink: 0;
+}
+
+#banner {
+    display: block; /* Ensure it's not set to 'none' */
+    visibility: visible; /* Ensure it's not hidden */
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -17,7 +36,7 @@ form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
+section, summary, time, mark, audio, video, select {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -139,7 +158,7 @@ input, select, textarea {
 
 		}
 
-	body, input, select, textarea {
+	body, input, textarea {
 		color: #ffffff;
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
@@ -998,6 +1017,7 @@ input, select, textarea {
 
 /* Button */
 
+	select,
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
@@ -1063,6 +1083,7 @@ input, select, textarea {
 			width: 100%;
 		}
 
+		/* select.small, */
 		input[type="submit"].small,
 		input[type="reset"].small,
 		input[type="button"].small,
@@ -1071,6 +1092,7 @@ input, select, textarea {
 			font-size: 0.6rem;
 			height: 2.0625rem;
 			line-height: 2.0625rem;
+			margin-right: 1rem;
 		}
 
 		input[type="submit"].primary,
@@ -1102,6 +1124,88 @@ input, select, textarea {
 	input[type="button"],
 	button {
 		line-height: calc(2.75rem - 2px);
+	}
+
+/* Banner */
+
+	#banner {
+		background-attachment: fixed;
+		/* background-color: #272833; */
+		background-image: url("../../images/banner.jpg");
+		background-position: center center;
+		background-size: contain;
+		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+		min-height: 100vh;
+		position: relative;
+		text-align: center;
+		z-index: 21;
+	}
+
+		#banner:before {
+			content: '';
+			display: inline-block;
+			height: 100vh;
+			vertical-align: middle;
+			width: 1%;
+		}
+
+		#banner:after {
+			/* background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		#banner .content {
+			display: inline-block;
+			margin-right: 1%;
+			max-width: 95%;
+			padding: 6em;
+			position: relative;
+			text-align: right;
+			vertical-align: middle;
+			z-index: 1;
+		}
+
+			#banner .content header {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+				#banner .content header h2 {
+					font-size: 2.5em;
+					margin: 0;
+				}
+
+				#banner .content header p {
+					margin: 0.5em 0 0 0;
+					top: 0;
+				}
+
+			#banner .content .image {
+				border-radius: 100%;
+				display: inline-block;
+				height: 18em;
+				margin-left: 3em;
+				vertical-align: middle;
+				width: 18em;
+			}
+
+				#banner .content .image img {
+					border-radius: 100%;
+					display: block;
+					width: 100%;
+				}
+
+	body.is-touch #banner {
+		background-attachment: scroll;
 	}
 
 /* BG */
@@ -1139,14 +1243,12 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto,
- 256px 256px;
+			background-image: url("../../images/web-bg.jpg");
 			background-position: center,
  center;
-			background-repeat: no-repeat,
- repeat;
+			background-size: cover;
 			z-index: 2;
+			
 		}
 
 		#bg:after {
@@ -1158,7 +1260,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/mobile-bg.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1179,6 +1281,13 @@ input, select, textarea {
 		body.is-preload #bg:before {
 			background-color: #000000;
 		}
+
+		@media (max-width: 600px) {
+			#bg:before {
+				background-image: url("../../images/mobile-bg.jpg");
+			}
+		}
+
 
 /* Wrapper */
 
@@ -1291,11 +1400,12 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
+			width: 10em;
+			height: 10em;
+			line-height: 10em;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
+			object-fit: cover;
 		}
 
 			#header .logo .icon:before {
@@ -1441,9 +1551,9 @@ input, select, textarea {
 				}
 
 			#header .logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
+				width: 8rem;
+				height: 8rem;
+				line-height: 8rem;
 			}
 
 				#header .logo .icon:before {
@@ -1544,7 +1654,7 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			width: 45rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
@@ -1663,22 +1773,18 @@ input, select, textarea {
         /* Basic styles for the modal */
         /* .modal {
             display: none;
-            position: fixed;
             z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
-        }
+            /* left: 0;
+            top: 0; */
+            /* width: 100%; */
+            /* height: 100%; */
+            /* overflow: auto; */
+            /* padding-top: 60px; */
+        /* } */
         .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
+            /* margin: 5% auto; */
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
+            /* width: 80%; */
         } */
         .close {
             color: #aaa;
@@ -1693,7 +1799,102 @@ input, select, textarea {
             cursor: pointer;
         }
 
-		#nameInputSection {
+		#phoneInputSection {
 			display: flex;
 			gap: .5rem;
+			padding-bottom: 2rem;
+		}
+
+		.btn-selected {
+            font-weight: bold;
+            opacity: 1;
+        }
+        .btn-unselected {
+            opacity: 0.5;
+        }
+        .hidden {
+            display: none;
+        }
+
+		/* .inviteeContainer {
+			display: flex;
+			gap: 1rem;
+			padding-bottom: 1rem;
+		}
+
+		.rsvpActionButtons {
+			display: flex;
+			justify-content: flex-end;
+			margin-left: 1rem;
+		} */
+
+		#rsvpActions {
+			justify-content: end;
+		}
+
+		.inviteeContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .rsvpActionButtons {
+            display: flex;
+            gap: 10px; /* Space between buttons and dropdown */
+        }
+        /* .form-control.small {
+            width: 150px; Set a uniform width for dropdowns
+        } */
+
+		.inviteeName {
+			margin: 0; /* Remove default margins from <p> */
+			flex-grow: 1; /* Allow the name to take up available space */
+		}
+
+		.form-control.small {
+			text-align: center;
+			font-size: .6rem;
+			height: 2.0625rem;
+			line-height: 2.0625rem;
+			text-transform: uppercase; /* Make text all caps */
+			letter-spacing: 0.2rem; /* Add letter spacing */
+			/* width: calc(100% - 15px); Adjust dropdown width for full width */
+			/* margin-bottom: 5px; Add margin for spacing */
+		}
+
+		.iteneraryContainer {
+			display: flex;
+			gap: 2rem;
+			
+		}
+
+		@media (max-width: 600px) {
+			#phoneInputSection{
+				flex-direction: column;
+				/* gap: .5rem; */
+			}
+
+			.inviteeContainer {
+				flex-direction: column; /* Stack items vertically on small screens */
+				align-items: flex-start; /* Align items to the start */
+				padding-bottom: .5rem;
+			}
+		
+			.rsvpActionButtons {
+				flex-direction: column; /* Stack buttons and dropdown vertically */
+				width: 100%; /* Use full width for items */
+			}
+		
+			.form-control.small {
+				width: calc(100% - 15px); /* Adjust dropdown width for full width */
+				/* margin-bottom: 5px; Add margin for spacing */
+			}
+
+			.inviteeName {
+				padding-bottom: .25rem;
+			}
+			
+			.time {
+				width: 5rem;
+			}
 		}
