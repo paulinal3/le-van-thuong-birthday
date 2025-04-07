@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const guests = [
         { 
-            phones: ["7044416580"],
+            phones: ["7044416580", "7035081135"],
             name: "Thăng Lê", 
             invitees: ["Thomas Lê", "Mignon Lê", "Michael Lê", "Christina Lê", "Paulina Lê", "Lee Kaufman"],
             isImmediateFam: true
