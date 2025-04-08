@@ -1,7 +1,7 @@
 // import { guests } from './guests.js';
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Confetti effect on page load
-    setTimeout(function() {
+    setTimeout(function () {
         confetti({
             particleCount: 200,
             spread: 100000,
@@ -24,81 +24,81 @@ document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('audio');
 
     const guests = [
-        { 
+        {
             phones: ["7044416580", "7035081135"],
-            name: "Thăng Lê", 
-            invitees: ["Thomas Lê", "Mignon Lê", "Michael Lê", "Christina Lê", "Paulina Lê", "Lee Kaufman"],
+            name: "Thăng Lê",
+            invitees: ["Thăng Lê", "Mignon Lê", "Michael Lê", "Christina Lê", "Paulina Lê", "Lee Kaufman"],
             isImmediateFam: true
-        }, 
+        },
         {
             phones: ["7032824957"],
-            name: "Thúy Lê", 
+            name: "Thúy Lê",
             invitees: ["Thúy Lê", "Titi Vũ", "Christopher Vũ", "Kayla Vũ", "Mai-Ly Vũ", "Brice Vũ"],
             isImmediateFam: true
-        }, 
-        { 
+        },
+        {
             phones: ["7039634022", "7035097016"],
-            name: "Thư Trần", 
+            name: "Thư Trần",
             invitees: ["Thu Trần", "Hoàng Trần", "Vinh Trần"],
             isImmediateFam: true
         },
-        { 
+        {
             phones: ["7036243576"],
-            name: "Thương Lê", 
+            name: "Thương Lê",
             invitees: ["Thương Lê", "Mina Bùi", "Huy Lâm", "Audrey Lâm", "Adeline Lâm", "Ti Bùi", "Curtis Flickinger"],
             isImmediateFam: true
-        }, 
-        { 
+        },
+        {
             phones: ["5712475533", "5712475534"],
-            name: "Thùy Lê", 
+            name: "Thùy Lê",
             invitees: ["Thùy Lê", "Dũng Nguyễn", "Paul Nguyễn", "Mary Nguyễn", "Bin Nguyễn"],
             isImmediateFam: true
         },
-        { 
+        {
             phones: ["7036255560"],
-            name: "Thạch Lê", 
+            name: "Thạch Lê",
             invitees: ["Thạch Lê", "Thanh Lê", "Chloe Lê", "Tiana Lê", "Theresa Lê"],
             isImmediateFam: true
         },
-        { 
+        {
             phones: ["7037959749"],
-            name: "Lụư Lê", 
+            name: "Lụư Lê",
             invitees: ["Lụư Lê", "Logan Lê"],
             isImmediateFam: true
-        }, 
-        { 
+        },
+        {
             phones: ["9192723956"],
-            name: "Thủy Tíên Lê", 
-            invitees: ["Thủy Tíên Lê", "Gina Lê"] 
-        }, 
-        { 
+            name: "Thủy Tíên Lê",
+            invitees: ["Thủy Tíên Lê", "Gina Lê"]
+        },
+        {
             phones: ["6785714245"],
-            name: "Thảo Trương", 
-            invitees: ["Tùng Trịnh", "Thảo Trương", "John Barker", "Mya Barker", "Erin Barker"] 
-        }, 
-        { 
+            name: "Thảo Trương",
+            invitees: ["Tùng Trịnh", "Thảo Trương", "John Barker", "Mya Barker", "Erin Barker"]
+        },
+        {
             phones: ["4437658307"],
-            name: "Hiếu Trương", 
-            invitees: ["Hiếu Trương", "Tracy", "Child 1", "Child 2"] 
-        }, 
-        { 
+            name: "Hiếu Trương",
+            invitees: ["Hiếu Trương", "Tracy", "Child 1", "Child 2"]
+        },
+        {
             phones: ["7703800751"],
-            name: "Tùng Trịnh", 
-            invitees: ["Tùng Trịnh"] 
-        }, 
-        { 
+            name: "Tùng Trịnh",
+            invitees: ["Tùng Trịnh"]
+        },
+        {
             phones: ["7036250217", "7036246317"],
-            name: "Ông Ba", 
+            name: "Ba Má",
             invitees: ["Ba/Ông Nội/Ngọai/Ông Cố Thưởng", "Má/Bà Nội/Ngọai/Bà Cố Liên"],
             isImmediateFam: true
         }
     ];
 
-    detailsNavsButton.onclick = function() {
+    detailsNavsButton.onclick = function () {
         audio.play()
     }
 
-    rsvpNavButton.onclick = function() {
+    rsvpNavButton.onclick = function () {
         // Reset modal to initial state
         guestPhoneInput.value = '';
         phoneInputContainer.style.display = "block";
@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.play()
     };
 
-    closeModal.onclick = function() {
+    closeModal.onclick = function () {
         rsvpModal.style.display = "none";
     };
 
-    submitPhoneButton.onclick = function() {
+    submitPhoneButton.onclick = function () {
         const guestPhone = guestPhoneInput.value;
         const guestInfo = guests.find(guest => guest.phones.includes(guestPhone));
         guestInfo.isImmediateFam ? privateCelebration.style.display = "block" : privateCelebration.style.display = "none";
@@ -126,17 +126,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let selectHTML = '';
-    if (guestPhone !== "7036250217" && guestPhone !== "7036246317") {
-    selectHTML = `<select class="form-control hidden small button">
-                                            <option value="" disabled selected>Select age</option>
-                                            <option value="adult">Adult</option>
-                                            <option value="child">Child (6-12yrs)</option>
-                                            <option value="toddler">Toddler (3-5yrs)</option>
-                                            <option value="baby">Baby (under 2yrs)</option>
-                                        </select>`
-    }
-
-
+        if (guestPhone !== "7036250217" && guestPhone !== "7036246317") {
+            selectHTML =
+                `<select class="form-control hidden small button">
+                <option value="" disabled selected>Select age</option>
+                <option value="adult">Adult</option>
+                <option value="child">Child (6-12yrs)</option>
+                <option value="toddler">Toddler (3-5yrs)</option>
+                <option value="baby">Baby (under 2yrs)</option>
+            </select>`
+        }
 
         if (guestInfo) {
             partyName.innerHTML = `Respond by <u style="color: #f41818">May 15</u> for <span style="color: #f4c118">${guestInfo.name}</span> household`;
@@ -161,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    window.updateStatus = function(button, invitee, status) {
+    window.updateStatus = function (button, invitee, status) {
         const guestPhone = guestPhoneInput.value;
         const buttons = button.parentElement.querySelectorAll('button');
         const dropdown = button.parentElement.querySelector('select');
@@ -195,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    inviteesList.addEventListener('change', function(event) {
+    inviteesList.addEventListener('change', function (event) {
         if (event.target.tagName.toLowerCase() === 'select') {
             const dropdown = event.target;
             let errorMessage = dropdown.parentElement.parentElement.querySelector('.error-message');
@@ -205,13 +204,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target === rsvpModal) {
             rsvpModal.style.display = "none";
         }
     };
 
-    document.getElementById('rsvpActions').addEventListener('click', function(event) {
+    document.getElementById('rsvpActions').addEventListener('click', function (event) {
         if (event.target && event.target.value === "Send RSVP") {
             if (validateRSVP()) sendRSVPEmail();
         }
@@ -257,9 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`Email details: ${JSON.stringify(templateParams, null, 2)}`);
 
         emailjs.send("service_ni9np5g", "90_rsvp", templateParams)
-            .then(function(response) {
+            .then(function (response) {
                 alert('RSVP sent successfully!');
-            }, function(error) {
+            }, function (error) {
                 alert('Failed to send RSVP: ' + error.text);
             });
     }
