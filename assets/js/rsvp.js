@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItem.innerHTML = `<p class='inviteeName'>${invitee}</p>
                                       <div class='rsvpActionButtons'>
                                         <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'accept')">Accept</button>
-                                        <select class="form-control hidden small">
+                                        <select class="form-control hidden small button">
                                             <option value="" disabled selected>Select age</option>
                                             <option value="adult">Adult</option>
                                             <option value="child">Child (6-12yrs)</option>
@@ -161,6 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.classList.remove('hidden');
             if (dropdown.value === '') {
                 errorMessage.textContent = 'Please select an age.';
+            } else if (dropdown.value != '') {
+                dropdown.classList.add('btn-selected');
             }
         } else {
             dropdown.classList.add('hidden');

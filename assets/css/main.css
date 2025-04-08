@@ -462,6 +462,7 @@ input, select, textarea {
 		select option {
 			color: #ffffff;
 			background: #1b1f22;
+			text-align: center;
 		}
 
 		select:focus::-ms-value {
@@ -1840,7 +1841,6 @@ input, select, textarea {
         }
         .rsvpActionButtons {
             display: flex;
-            gap: 10px; /* Space between buttons and dropdown */
         }
         /* .form-control.small {
             width: 150px; Set a uniform width for dropdowns
@@ -1862,13 +1862,17 @@ input, select, textarea {
 			/* margin-bottom: 5px; Add margin for spacing */
 		}
 
-		.iteneraryContainer {
+		.itineraryContainer {
 			display: flex;
 			gap: 2rem;
 			
 		}
 
 		@media (max-width: 600px) {
+			.rsvpActionButtons {
+				gap: 10px; /* Space between buttons and dropdown */
+			}
+
 			#phoneInputSection{
 				flex-direction: column;
 				/* gap: .5rem; */
