@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 
         { 
             phones: ["7036250217", "7036246317"],
-            name: "Ông Bà", 
-            invitees: ["Ông Bà"],
+            name: "Ông Ba", 
+            invitees: ["Ba/Ông Nội/Ngọai/Ông Cố Thưởng", "Má/Bà Nội/Ngọai/Bà Cố Liên"],
             isImmediateFam: true
         }
     ];
@@ -118,6 +118,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestInfo = guests.find(guest => guest.phones.includes(guestPhone));
         guestInfo.isImmediateFam ? privateCelebration.style.display = "block" : privateCelebration.style.display = "none";
 
+        let acceptText = 'Accept'
+        let declineText = 'Decline'
+        if (guestPhone == "7036250217" || guestPhone == "7036246317") {
+            acceptText = "Chấp nhận"
+            declineText = "Từ chối"
+        }
+
+        let selectHTML = '';
+    if (guestPhone !== "7036250217" && guestPhone !== "7036246317") {
+    selectHTML = `<select class="form-control hidden small button">
+                                            <option value="" disabled selected>Select age</option>
+                                            <option value="adult">Adult</option>
+                                            <option value="child">Child (6-12yrs)</option>
+                                            <option value="toddler">Toddler (3-5yrs)</option>
+                                            <option value="baby">Baby (under 2yrs)</option>
+                                        </select>`
+    }
+
+
+
         if (guestInfo) {
             partyName.innerHTML = `Respond by <u style="color: #f41818">May 15</u> for <span style="color: #f4c118">${guestInfo.name}</span> household`;
             inviteesList.innerHTML = '';
@@ -126,15 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItem.classList.add('inviteeContainer')
                 listItem.innerHTML = `<p class='inviteeName'>${invitee}</p>
                                       <div class='rsvpActionButtons'>
-                                        <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'accept')">Accept</button>
-                                        <select class="form-control hidden small button">
-                                            <option value="" disabled selected>Select age</option>
-                                            <option value="adult">Adult</option>
-                                            <option value="child">Child (6-12yrs)</option>
-                                            <option value="toddler">Toddler (3-5yrs)</option>
-                                            <option value="baby">Baby (under 2yrs)</option>
-                                        </select>
-                                        <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'decline')">Decline</button>
+                                        <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'accept')">${acceptText}</button>
+                                        ${selectHTML}
+                                        <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'decline')">${declineText}</button>
                                       </div>
                                       <span class="error-message" style="color: red;"></span>`;
                 inviteesList.appendChild(listItem);
@@ -148,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.updateStatus = function(button, invitee, status) {
+        const guestPhone = guestPhoneInput.value;
         const buttons = button.parentElement.querySelectorAll('button');
         const dropdown = button.parentElement.querySelector('select');
         let errorMessage = button.parentElement.parentElement.querySelector('.error-message');
@@ -156,11 +171,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (btn === button) {
                 btn.classList.add('btn-selected');
                 btn.classList.remove('btn-unselected');
-                btn.textContent = status === 'accept' ? 'Accepted' : 'Declined';
+                if (guestPhone != "7036250217" && guestPhone != "7036246317") {
+                    btn.textContent = status === 'accept' ? 'Accepted' : 'Declined';
+                }
             } else {
                 btn.classList.remove('btn-selected');
                 btn.classList.add('btn-unselected');
-                btn.textContent = btn.textContent.includes('Accept') ? 'Accept' : 'Decline';
+                if (guestPhone != "7036250217" && guestPhone != "7036246317") {
+                    btn.textContent = btn.textContent.includes('Accept') ? 'Accept' : 'Decline';
+                }
             }
         });
 
