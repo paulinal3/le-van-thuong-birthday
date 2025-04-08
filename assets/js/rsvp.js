@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { 
             phones: ["4437658307"],
             name: "Hiếu Trương", 
-            invitees: ["Hiếu Trương", "Tracy", "Kid 1", "Kid 2"] 
+            invitees: ["Hiếu Trương", "Tracy", "Child 1", "Child 2"] 
         }, 
         { 
             phones: ["7703800751"],
