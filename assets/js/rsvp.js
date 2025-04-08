@@ -100,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
         rsvpModal.style.display = "block";
         rsvpActions.style.display = "none";
         privateCelebration.style.display = "none";
+        const audio = new Audio("../audio/KHÚC HÁT MỪNG SINH NHẬT - PHAN ĐINH TÙNG.mp3");
+
+        audio.play()
+        .then(() => console.log('Playing audio!'))
+        .catch(err => console.error('Playback failed:', err));
     };
 
     closeModal.onclick = function() {
