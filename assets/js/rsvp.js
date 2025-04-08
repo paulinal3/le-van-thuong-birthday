@@ -72,12 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
         { 
             phones: ["6785714245"],
             name: "Thảo Trương", 
-            invitees: ["Tùng Trương", "Thảo Trương", "John Barker", "Erin Barker", "Mya Barker"] 
+            invitees: ["Tùng Trịnh", "Thảo Trương", "John Barker", "Mya Barker", "Erin Barker"] 
         }, 
         { 
             phones: ["4437658307"],
             name: "Hiếu Trương", 
             invitees: ["Hiếu Trương", "Tracy", "Kid 1", "Kid 2"] 
+        }, 
+        { 
+            phones: ["7703800751"],
+            name: "Tùng Trịnh", 
+            invitees: ["Tùng Trịnh"] 
         }, 
         { 
             phones: ["7036250217", "7036246317"],
