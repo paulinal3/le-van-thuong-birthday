@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                       <div class='rsvpActionButtons'>
                                         <button class="btn btn-unselected small" onclick="updateStatus(this, '${invitee}', 'accept')">Accept</button>
                                         <select class="form-control hidden small">
-                                            <option value="">Select Age</option>
+                                            <option value="" disabled selected>Select age</option>
                                             <option value="adult">Adult</option>
                                             <option value="child">Child (6-12yrs)</option>
                                             <option value="toddler">Toddler (3-5yrs)</option>

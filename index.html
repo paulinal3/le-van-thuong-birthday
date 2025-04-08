@@ -1,156 +1,166 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>90th Birthday Celebration</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- <section id="banner">
+<head>
+	<title>90th Birthday Celebration</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- <section id="banner">
 			<div class="content">
 				<span class="image"><img src="images/landing-page.png" alt="" /></span>
 			</div>
 			<a href="#one" class="goto-next scrolly">Next</a>
 		</section> -->
 
-		<!-- Wrapper -->
-		<div id="wrapper">
-			<!-- Header -->
-			<header id="header">
-				<img src="images/portrait.jpg" class="logo">
-				<div class="content">
-					<div class="inner">
-						<h1>Lê Văn Thưởng's<br> 90th Birthday Celebration</h1>
-						<p>We hope you are able to join us to celebrate!</p>
-						<h2>06.14.2025</h2>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<img src="images/portrait.jpg" class="logo">
+			<div class="content">
+				<div class="inner">
+					<h1>Lê Văn Thưởng's<br> 90th Birthday Celebration</h1>
+					<p>We hope you are able to join us to celebrate!</p>
+					<h2>06.14.2025</h2>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#details">Details</a></li>
+					<li id="rsvpNavButton"><a href="#rsvp">RSVP</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Details -->
+			<article id="details">
+				<h2 class="major">Event Details</h2>
+				<h3>Date</h3>
+				<p>Saturday, June 14, 2025</p>
+				<h3>Time</h3>
+				<p>7:15 PM - 9:30 PM<br>All guests must be present for the party to be seated. Please arrive on time.
+				</p>
+				<h3>Location</h3>
+				<p>Texas de Brazil - Fairfax<br>11750 Fair Oaks Mall Suite K240, Fairfax, VA 22033</p>
+				<h3>Dinner</h3>
+				<p>Chef-crafted gourmet salad
+					area, traditional side items and
+					various cuts of beef, lamb, pork,
+					chicken and Brazilian sausage
+					carved tableside.<br>
+					Non-alcoholic beverages
+					(fountain soda, regular coffee
+					and regular iced tea) with
+					complimentary refills.<br>
+					<a href="assets/texas-de-brazil-menu.pdf" target="_blank">Menu</a>
+				</p>
+				<p><i>Alcohol is not included, but guests are welcome too purchase their own drinks at the
+						venue.</i><br>
+				</p>
+				<h3>Dress Code</h3>
+				<p>Cocktail attire<br>Suggestions: Women - Cocktail dress or dressy jumpsuits. Mens - Dress shirts and
+					slacks, or business-casual wear.</p>
+				<h3>Contact</h3>
+				<p>For questions, please reach out to Thăng Lê (704-441-6580) or Thư Trần (703-509-7016).</p>
+			</article>
+
+			<!-- RSVP -->
+			<article id="rsvp">
+				<h2 class="major">RSVP</h2>
+
+				<!-- RSVP Modal -->
+				<div id="rsvpModal" class="modal">
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<div id="phoneInputContainer">
+							<h3>Find your invitiation</h3>
+							<div id="phoneInputSection">
+								<input type="tel" id="guestPhoneInput" class="form-control"
+									placeholder="Enter your phone number">
+								<button id="submitPhoneButton">Submit</button>
+							</div>
+						</div>
+
+						<!-- Immediate Family Itinerary -->
+						<div id="privateCelebration" style="display: none;">
+							<h3 style="text-align: center">Itinerary</3>
+								<h4></h4>
+								<div class="iteneraryContainer">
+									<h4 class="time">3:00 PM-6:30 PM</h4>
+									<div style="flex-direction: column" class="descriptionContainer">
+										<h4><u>Mandatory</u> private gathering with immediate family</h4>
+										<p class="description"><i>731 Tonquin Place Northeast<br>Leesburg, VA</i></p>
+									</div>
+								</div>
+								<div class="iteneraryContainer">
+									<h4 class="time">6:30 PM-7:30 PM</h4>
+									<div style="flex-direction: column" class="descriptionContainer">
+										<h4>Depart for dinner</h4>
+									</div>
+								</div>
+								<div class="iteneraryContainer">
+									<h4 class="time">7:30 PM-9:30 PM</h4>
+									<div style="flex-direction: column" class="descriptionContainer">
+										<h4>Birthday dinner with larger family</h4>
+										<p class="description"><i>Texas de Brazil - Fairfax</i></p>
+									</div>
+								</div>
+								<hr>
+						</div>
+
+						<!-- RSVP Invite Modal -->
+						<div id="partyDetails" style="display: none;">
+							<h3 id="partyName"></h3>
+							<ul id="inviteesList"></ul>
+						</div>
+						<ul class="actions" id="rsvpActions" style="display: none;">
+							<li><input type="submit" value="Send RSVP" class="primary" /></li>
+						</ul>
 					</div>
 				</div>
-				<nav>
-					<ul>
-						<li><a href="#details">Details</a></li>
-						<li id="rsvpNavButton"><a href="#rsvp">RSVP</a></li>
-					</ul>
-				</nav>
-			</header>
 
-			<!-- Main -->
-			<div id="main">
-
-				<!-- Details -->
-				<article id="details">
-					<h2 class="major">Event Details</h2>
-					<h3>Date</h3>
-					<p>Saturday, June 14, 2025</p>
-					<h3>Time</h3>
-					<p>7:15 PM - 9:30 PM<br>All guests must be present for the party to be seated. Please arrive on time.</p>
-					<h3>Location</h3>
-					<p>Texas de Brazil - Fairfax<br>11750 Fair Oaks Mall Suite K240, Fairfax, VA 22033</p>
-					<h3>Food</h3>
-					<p>Chef-crafted gourmet salad
-						area, traditional side items and
-						various cuts of beef, lamb, pork,
-						chicken and Brazilian sausage
-						carved tableside.<br>
-						Non-alcoholic beverages
-						(fountain soda, regular coffee
-						and regular iced tea) with
-						complimentary refills.<br>
-						<a href="assets/texas-de-brazil-menu.pdf" target="_blank">Menu</a></p>
-						<p><i>Alcohol is not included, but guests are welcome too purchase their own drinks at the venue.</i><br>
-					</p>
-					<h3>Dress Code</h3>
-					<p>Cocktail attire<br>Suggestions: Women - Cocktail dress or dressy jumpsuits. Mens - Dress shirts and slacks, or business-casual wear.</p>
-					<h3>Contact</h3>
-					<p>For questions, please reach out to Thăng Lê (704-441-6580) or Thư Trần (703-509-7016).</p>
-				</article>
-
-				<!-- RSVP -->
-				<article id="rsvp">
-					<h2 class="major">RSVP</h2>
-					
-					<!-- RSVP Modal -->
-					<div id="rsvpModal" class="modal">
-						<div class="modal-content">
-							<span class="close">&times;</span>
-							<div id="phoneInputContainer">
-								<h3>Find your invitiation</h3>
-								<div id="phoneInputSection">
-									<input type="tel" id="guestPhoneInput" class="form-control" placeholder="Enter your phone number">
-									<button id="submitPhoneButton">Submit</button>
-								</div>
-							</div>
-
-							<!-- Immediate Family Itinerary -->
-							<div id="privateCelebration" style="display: none;">
-								<h3 style="text-align: center">Itinerary</3>
-									<h4></h4>
-									<div class="iteneraryContainer">
-										<h4 class="time">3:00 PM-6:30 PM</h4>
-										<div style="flex-direction: column" class="descriptionContainer">
-											<h4><u>Mandatory</u> private gathering with immediate family</h4>
-											<p class="description"><i>731 Tonquin Place Northeast<br>Leesburg, VA</i></p>
-										</div>
-									</div>
-									<div class="iteneraryContainer">
-										<h4 class="time">6:30 PM-7:30 PM</h4>
-										<div style="flex-direction: column" class="descriptionContainer">
-											<h4>Depart for dinner</h4>
-										</div>
-									</div>
-									<div class="iteneraryContainer">
-										<h4 class="time">7:30 PM-9:30 PM</h4>
-										<div style="flex-direction: column" class="descriptionContainer">
-											<h4>Birthday dinner with larger family</h4>
-											<p class="description"><i>Texas de Brazil - Fairfax</i></p>
-										</div>
-									</div>
-									<hr>
-							</div>
-							
-							<!-- RSVP Invite Modal -->
-							<div id="partyDetails" style="display: none;">
-								<h3 id="partyName"></h3>
-								<ul id="inviteesList"></ul>
-							</div>
-							<ul class="actions" id="rsvpActions" style="display: none;">
-								<li><input type="submit" value="Send RSVP" class="primary" /></li>
-							</ul>
-						</div>
-					</div>
-	
-				</article>
-			</div>
-
-			<!-- Footer -->
-			<footer id="footer">
-				<p class="copyright">PAL</p>
-			</footer>
-
+			</article>
 		</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">PAL</p>
+		</footer>
 
-		<!-- Scripts -->
-			<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/rsvp.js"></script>
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-			<script type="text/javascript">
-				(function(){
-					emailjs.init({
-						publicKey: "BZYyPRhoJxG2U12hw",
-					});
-				})();
-			</script>
-			<!-- <script type="module" src="assets/js/rsvp.js"></script> -->
+	</div>
 
-	</body>
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/rsvp.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function () {
+			emailjs.init({
+				publicKey: "BZYyPRhoJxG2U12hw",
+			});
+		})();
+	</script>
+	<!-- <script type="module" src="assets/js/rsvp.js"></script> -->
+
+</body>
+
 </html>
