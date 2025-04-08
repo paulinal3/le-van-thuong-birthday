@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const inviteesList = document.getElementById('inviteesList');
     const privateCelebration = document.getElementById('privateCelebration');
     const rsvpActions = document.getElementById('rsvpActions');
+    const detailsNavsButton = document.getElementById('detailsNavButton');
+    const audio = document.getElementById('audio');
 
     const guests = [
         { 
@@ -92,6 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    detailsNavsButton.onclick = function() {
+        audio.play()
+    }
+
     rsvpNavButton.onclick = function() {
         // Reset modal to initial state
         guestPhoneInput.value = '';
@@ -100,11 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rsvpModal.style.display = "block";
         rsvpActions.style.display = "none";
         privateCelebration.style.display = "none";
-        const audio = new Audio("../audio/KHÚC HÁT MỪNG SINH NHẬT - PHAN ĐINH TÙNG.mp3");
-
         audio.play()
-        .then(() => console.log('Playing audio!'))
-        .catch(err => console.error('Playback failed:', err));
     };
 
     closeModal.onclick = function() {
