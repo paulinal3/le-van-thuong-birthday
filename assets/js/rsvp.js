@@ -188,10 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdown.classList.add('hidden');
             errorMessage.textContent = ''; // Clear error if Decline is selected
         }
-
-        if (dropdown.value != '') {
-            dropdown.classList.add('btn-selected');
-        }
     }
 
     inviteesList.addEventListener('change', function (event) {
