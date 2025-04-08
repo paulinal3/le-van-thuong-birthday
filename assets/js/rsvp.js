@@ -159,14 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (status === 'accept') {
             dropdown.classList.remove('hidden');
-            if (dropdown.value === '') {
-                errorMessage.textContent = 'Please select an age.';
-            } else if (dropdown.value != '') {
-                dropdown.classList.add('btn-selected');
-            }
         } else {
             dropdown.classList.add('hidden');
             errorMessage.textContent = ''; // Clear error if Decline is selected
+        }
+
+        if (dropdown.value != '') {
+            dropdown.classList.add('btn-selected');
         }
     }
 
