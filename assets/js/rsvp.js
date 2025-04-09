@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let acceptText = 'Accept'
         let declineText = 'Decline'
         if (guestPhone == "7036250217" || guestPhone == "7036246317") {
-            acceptText = "Chấp nhận"
+            acceptText = "Nhận lời"
             declineText = "Từ chối"
         }
 
