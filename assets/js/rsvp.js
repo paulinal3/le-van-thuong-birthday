@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             selectHTML =
                 `<select class="form-control hidden small button">
                 <option value="" disabled selected>Select age</option>
-                <option value="adult">Adult</option>
+                <option value="adult">Adult (over 13yrs)</option>
                 <option value="child">Child (6-12yrs)</option>
                 <option value="toddler">Toddler (3-5yrs)</option>
                 <option value="baby">Baby (under 2yrs)</option>
