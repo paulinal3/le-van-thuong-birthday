@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const rsvpActions = document.getElementById('rsvpActions');
     const detailsNavsButton = document.getElementById('detailsNavButton');
     const audio = document.getElementById('audio');
+    const successMessage = document.getElementById('successMessage')
+    const closeButton = document.getElementById('closeButton')
+    const errorCloseButton = document.getElementById('errorCloseButton')
+    const errorMessage = document.getElementById('errorMessage')
+    const rsvpArticle = document.getElementById('rsvp')
 
     const guests = [
         {
@@ -107,11 +112,20 @@ document.addEventListener('DOMContentLoaded', function () {
         rsvpActions.style.display = "none";
         privateCelebration.style.display = "none";
         audio.play()
+        successMessage.style.display = "none";
+        errorMessage.style.display = "none";
     };
 
     closeModal.onclick = function () {
         rsvpModal.style.display = "none";
     };
+
+    errorCloseButton.onclick = function () {
+        rsvpActions.style.display = "block";
+        privateCelebration.style.display = "block";
+        partyDetails.style.display = "block";
+        errorMessage.style.display = "none";
+    }
 
     submitPhoneButton.onclick = function () {
         const guestPhone = guestPhoneInput.value;
@@ -253,9 +267,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         emailjs.send("service_ni9np5g", "90_rsvp", templateParams)
             .then(function (response) {
-                alert('RSVP sent successfully!');
+                successMessage.style.display = "block";
+                rsvpActions.style.display = "none";
+                privateCelebration.style.display = "none";
+                partyDetails.style.display = "none"
             }, function (error) {
-                alert('Failed to send RSVP: ' + error.text);
+                errorMessage.style.display = "block";
+                rsvpActions.style.display = "none";
+                privateCelebration.style.display = "none";
+                partyDetails.style.display = "none";
+                console.log('Failed to send RSVP: ' + error.text);
             });
     }
 });
